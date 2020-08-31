@@ -22,13 +22,17 @@ h1 {
 }
 
 header {
-    padding: 10px 5px;
+    padding: 10px 10px;
+    display: flex;
+    justify-content: space-between;
+
 }
 
 .page-wrapper {
     width: 1180px;
     margin: 0 auto;
     background-color: slategray;
+    min-height: 100vh;
 }
 
 .title {
@@ -37,8 +41,14 @@ header {
 
 .top-menu {
     display: flex;
-    justify-content: space-around;
-    margin-bottom: 20px;
+}
+
+.top-menu li {
+    margin-right: 10px;
+}
+
+.top-menu:last-child {
+    margin: 0;
 }
 
 .top-menu a {
@@ -46,36 +56,39 @@ header {
     border: 1px solid black;
     border-radius: 10px;
     font-size: 20px;
-    line-height: 40px;
+    line-height: 2;
     padding: 0 15px;
     display: block;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 1440px) {
     .title {
-        padding-right: 50%;
+        width: 100%;
     }
+    header {
+        flex-wrap: wrap;
+        justify-content: center;  
+    }
+}
 
+@media screen and (max-width: 767px) {
+    .title h1 {
+        text-align: left;
+    }
+    header {
+        flex-wrap: wrap;
+        justify-content: flex-start;
+    }
     .top-menu {
         flex-wrap: wrap;
     }
 
     .top-menu li {
+        width: 100%;
         margin-bottom: 10px;
     }
-
     .top-menu a {
-        line-height: 70px;
+        text-align: center;
     }
 }
 
-@media screen and (max-width: 1440px) {
-    .top-menu {
-        justify-content: center;
-    }
-
-    .top-menu li {
-        padding: 0 5px;
-        width: 100%;
-    }
-}
